@@ -1,0 +1,21 @@
+<div style="font-size:30px;" id="result"></div>
+<div id="line" style="float:left"></div>
+<div id="chartContainer" style="float:left">
+</div>
+
+<script src="node_modules/socket.io-client/socket.io.js"></script>
+
+
+<script>
+  var i=1;
+  var socket = io.connect('http://localhost:3000');
+  socket.on('news', function (data) {
+    console.log(data);
+    document.getElementById("result").innerHTML=data;
+    // $(document).ready(function(){
+    // 	//generateGraph(data,i);
+    // 	//generateGraph1(data,i);
+    // 	i++;
+    // });
+  });
+</script>
