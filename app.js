@@ -42,7 +42,7 @@ serialPort.on('open', function(){
         var jsonData = JSON.parse(data.toString());//kormaangala mgRoad bellandur rv
           if(lastValue !== data.toString()){
           	if(jsonData["bulb_1"] === "ON" && jsonData["bulb_2"] === "ON" && jsonData["bulb_3"] === "ON" && jsonData["bulb_4"] === "ON"){
-              socket.emit('news', '{"bulb":[{"lat":12.9279, "lng":77.6271},{"lat": 12.9766, "lng": 77.5993},{"lat":12.9221, "lng":77.4976},{"lat":12.9105, "lng":77.5857}],"msg":"NONE OFF"}');
+              socket.emit('news', '{"bulb":[],"msg":"NONE OFF"}');
               console.log(data.toString());
           }
           else if(jsonData["bulb_1"] === "OFF" && jsonData["bulb_2"] === "ON" && jsonData["bulb_3"] === "ON" && jsonData["bulb_4"] === "ON"){
